@@ -53,12 +53,9 @@ app.post("/imageurl", (req, res) => {
   image.handleAPICall(req, res);
 });
 
-const DATABASE_URL = process.env.DATABASE_URL;
-app.listen(DATABASE_URL, () => {
-  console.log(`Server is listening on ${DATABASE_URL}`);
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server is listening on ${process.env.PORT}`);
 });
-
-console.log(process.env);
 
 // signin --> POST  = success or fail, POST for protected password.
 // register --> POST = user
