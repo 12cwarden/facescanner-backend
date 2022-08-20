@@ -11,11 +11,8 @@ const image = require("./controllers/image");
 const db = knex({
   client: "pg",
   connection: {
-    host: "postgresql-angular-19150",
-    port: 5432,
-    user: "postgres",
-    password: "facescanner",
-    database: "facescanner",
+    host: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 
